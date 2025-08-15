@@ -6,3 +6,6 @@ em futuras versoes será fixo.
 
 
 Estudando sobre API'S, que serão integradas ao codigo.
+
+Por agora no projeto, a direção que vou tomar é integrar com google sheets pela simplicidade
+que seria para integrar em empresas, visto que planilhas são comuns em pequenas e medias empresas.
