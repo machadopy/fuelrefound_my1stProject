@@ -1,1 +1,3 @@
-MARCIO VITOR MACHADO;AZP3E72;66;47Ana Clara Souza;XYZ9K45;64;45Carlos Eduardo Lima;QWE7L89;76;54Fernanda Silva;RTY2M34;75;53
+marcio;azy;33;24
+Camila;bhl7070;55;39
+juca;jjk;33;24

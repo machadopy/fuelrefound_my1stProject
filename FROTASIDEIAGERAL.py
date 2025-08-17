@@ -30,7 +30,3 @@ while True:
         li.cabecalho('Encerrado.')
         break
     sleep(2)
-'''for k, v in enumerate(drivers):
-    print(f'{k+1:^3}', end = '')
-    print(f'{v["name"]:>10} {v["lplate"]:>10} {v["drivedis"]:>10} {v['refound']:>10.2f}')
-'''
