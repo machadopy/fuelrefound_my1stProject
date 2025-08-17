@@ -1,4 +1,4 @@
-from flask import *
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -67,4 +67,17 @@ def excluir_usuario(id):
 
 app.run(port=5000, host='localhost', debug=True) 
 
+
+
+#consultar id, todos e excluir
+
+#1- CRIAR API QUE DISPONIBILIZA A CONSULTA, CRIAÇÃO, EDIÇÃO E EXCLUSAO DE CADASTROS DE COMBUSTIVEL 
+#2- URL BASE - localhost
+#3- Endpoints
+#    -localhost/beneficiario (GET)
+#   -localhost/beneficiario (POST)
+#   -localhost/beneficiario/id (GET)
+#  -localhost/beneficiario/id (PUT)
+# -localhost/beneficiario/id (DELETE)
+#4 - Recursos - Combustivel
 

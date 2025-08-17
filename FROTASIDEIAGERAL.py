@@ -1,48 +1,36 @@
+from time import sleep
+import lib.interface as li
+import lib.arquivo as liA
+
+arq = 'tabeladriver.txt'
+if not liA.arqexiste(arq):
+    print('Arquivo nao encontrado')
+    liA.criarArquivo(arq)
+
 drivers = list()
 driver = dict()
 countcod = 0
 
-def line():
-    print('-='*30)
-
-line()
-print('Sistema de Frotas')
-line()
+li.cabecalho('Sistema de Motoristas')
 
 while True:
+    resposta = li.menu(['Cadastrar Novo motorista', 'Tabela de motoristas','Encerrar'])
+    if resposta == 1:
+        li.cabecalho('Cadastro')
+        data_driver = li.newdriver()
+        liA.appendtoTab(arq, data_driver)      
+        print('Cadastro Realizado')
+        li.continuar()
+        print(42*'-')
 
-    driver.clear()
+    elif resposta == 2:
+        liA.lerArq(nome='tabeladriver.txt')
 
-    countcod +=1
-    driver['cod'] = countcod
-    driver['name'] = str(input('Nome do Colaborador: '))
-    driver['lplate'] = str(input('Placa do Veiculo: '))
-    driver['startkm'] = int(input('Km Inicio: '))
-    driver['finalkm'] = int(input('Km Final: '))
-    driver['drivedis'] = driver['finalkm'] - driver['startkm']
-    driver['refound'] = driver['drivedis'] / 10 * 7
-
-    drivers.append(driver.copy())
-
-    while True:
-        resp = str(input('Quer continuar? [S/N] ')).upper()[0]
-        if resp in 'SN':
-            break
-        print('Erro! responda apenas [S/N]: ')
-    if resp == 'N':
+    elif resposta == 3:
+        li.cabecalho('Encerrado.')
         break
-
-line()
-print(f'{'REEMBOLSO FROTA':^50}')
-line()
-print(f'{'COD':^3} {'NOME':>10} {'PLACA':>10} {'DISTANCIA':>10} {'REEMBOLSO R$':>5.10}')
-line()
-
-for k, v in enumerate(drivers):
+    sleep(2)
+'''for k, v in enumerate(drivers):
     print(f'{k+1:^3}', end = '')
     print(f'{v["name"]:>10} {v["lplate"]:>10} {v["drivedis"]:>10} {v['refound']:>10.2f}')
-
-
 '''
-for d in drivers:
-    print(f'{d["name"]} codigo {d["cod"]} de placa {d["lplate"]}, percorreu {d["drivedis"]}KM, devendo ser reembolsado R${d['refound']:.2f}')'''
